@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../Redux/hooks';
 import { decrement, increment, setName } from '../Redux/Reducers/counterSlice';
 
@@ -18,6 +19,13 @@ function Test() {
         dispatch(setName(e))
     }
   return (
+     <Box component="main" 
+        sx={{
+        flexGrow: 1, 
+        p: 10,
+        background: '#e9ebee'
+        }}
+      >
     <div>
         <button onClick={()=>{handleCount("pos")}}>+</button>
         <button onClick={()=>{handleCount("dos")}}>-</button>
@@ -26,6 +34,7 @@ function Test() {
       <input type="text" name="" id="" value={myName} onChange={(e)=>{handlename(e.target.value)}}/>
     {myName}
     </div>
+    </Box>
   )
 }
 

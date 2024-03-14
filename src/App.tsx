@@ -5,16 +5,20 @@ import './App.css';
 import { useSelector } from 'react-redux';
 import Test from './Pages/Test';
 import ResponsiveAppBar from './Comonents/TopNavBar';
+import Logos from './Pages/Logos/Logos';
+import { Box } from '@mui/material';
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
+    <Box>
     <ResponsiveAppBar />
+    <Box height={20} />
     <Routes>
       <Route path="/test" element={<Test />} />
+      <Route path="/" element={<Logos />} />
     </Routes>
-    </div>
+    </Box>
   </BrowserRouter>
   );
 }

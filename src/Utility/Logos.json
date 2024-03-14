@@ -1,0 +1,54 @@
+{
+    "Logos": [
+        {
+            "id": 1,
+            "image": "https://i.ibb.co/hVsnnwK/maruthi-logo.png",
+            "title": "Maruthi Suzuki"
+        },
+        {
+            "id": 2,
+            "image": "https://seeklogo.com/images/H/hyundai-logo-50C0EC8456-seeklogo.com.png",
+            "title": "Hyundai"
+        },
+        {
+            "id": 3,
+            "image": "https://seeklogo.com/images/R/renault-logo-18DB8E9AE7-seeklogo.com.png",
+            "title": "Renault"
+        },
+        {
+            "id": 4,
+            "image": "https://seeklogo.com/images/H/honda-silver-logo-E810C6A8A4-seeklogo.com.png",
+            "title": "Honda"
+        },
+        {
+            "id": 5,
+            "image": "https://seeklogo.com/images/T/Tata-logo-5C14C25DDE-seeklogo.com.png",
+            "title": "Tata"
+        },
+        {
+            "id": 6,
+            "image": "https://seeklogo.com/images/F/Ford-logo-836834C6CC-seeklogo.com.png",
+            "title": "Ford"
+        },
+        {
+            "id": 7,
+            "image": "https://seeklogo.com/images/V/Volkswagen-logo-213294A3AC-seeklogo.com.png",
+            "title": "Volkswagen"
+        },
+        {
+            "id": 8,
+            "image": "https://seeklogo.com/images/M/mahindra-logo-B74777040E-seeklogo.com.png",
+            "title": "Mahindra"
+        },
+        {
+            "id": 9,
+            "image": "https://seeklogo.com/images/T/toyota-logo-08A29AEE08-seeklogo.com.png",
+            "title": "Toyota"
+        },
+        {
+            "id": 10,
+            "image": "https://seeklogo.com/images/B/bmw-logo-A677AA8342-seeklogo.com.png",
+            "title": "BMW"
+        }
+    ]
+}
