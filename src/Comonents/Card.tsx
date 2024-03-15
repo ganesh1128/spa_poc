@@ -6,11 +6,12 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 interface CardProps {
-  height: string;
+  height?: string;
   width: string;
-  image: string;
+  image?: string;
   title: string;
   description?: string;
+  onClick?: () => void;
 }
 
 const AreaCard: FunctionComponent<CardProps> = ({
@@ -19,19 +20,24 @@ const AreaCard: FunctionComponent<CardProps> = ({
   image,
   title,
   description,
+  onClick
 }) => {
   return (
-    <Card sx={{ width: width }}>
-      <CardActionArea>
-        <div style={{ textAlign: 'center' }}>
-          <CardMedia
-            component="img"
-            height={height}
-            image={image}
-            alt={title}
-            style={{ display: 'inline-block', objectFit: 'cover', width: 'auto', marginTop: '15px' }}
-          />
-        </div>
+    <Card sx={{ width: width, maxHeight: '175px' }}>
+      <CardActionArea onClick={onClick}>
+        {
+          image && (
+            <div style={{ textAlign: 'center' }}>
+              <CardMedia
+                component="img"
+                height={height}
+                image={image}
+                alt={title}
+                style={{ display: 'inline-block', objectFit: 'cover', width: 'auto', marginTop: '15px' }}
+              />
+          </div>
+          )
+        }
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" align="center">
             {title}
