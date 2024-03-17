@@ -1,0 +1,215 @@
+{
+  "Logos": [
+    {
+      "id": "1",
+      "logo": "https://i.ibb.co/hVsnnwK/maruthi-logo.png",
+      "brand": "Maruthi Suzuki",
+      "detailedView": [
+        {
+          "id": "1",
+          "image": "",
+          "modal": "Swift",
+          "owner": "1st Owner",
+          "budget": "2L",
+          "Fuel": "Petrol",
+          "transmission": "Manual",
+          "bodyType": "Hatchpack",
+          "location": "Hyderabad",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "logo": "https://seeklogo.com/images/H/hyundai-logo-50C0EC8456-seeklogo.com.png",
+      "brand": "Hundai",
+      "detailedView": [
+        {
+          "id": "2",
+          "image": "https://seeklogo.com/images/H/hyundai-logo-50C0EC8456-seeklogo.com.png",
+          "modal": "Creta",
+          "owner": "2nd Owner",
+          "budget": "6L",
+          "Fuel": "Petrol",
+          "transmission": "Automatic",
+          "bodyType": "SUV",
+          "location": "Chennai",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "logo": "https://seeklogo.com/images/R/renault-logo-18DB8E9AE7-seeklogo.com.png",
+      "brand": "Renault",
+      "detailedView": [
+        {
+          "id": "3",
+          "image": "https://seeklogo.com/images/R/renault-logo-18DB8E9AE7-seeklogo.com.png",
+          "modal": "Kiger",
+          "owner": "3rd Owner",
+          "budget": "4L",
+          "Fuel": "Diesel",
+          "transmission": "Manual",
+          "bodyType": "Sedan",
+          "location": "Bangalore",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "logo": "https://seeklogo.com/images/H/honda-silver-logo-E810C6A8A4-seeklogo.com.png",
+      "brand": "Honda",
+      "detailedView": [
+        {
+          "id": "4",
+          "image": "https://seeklogo.com/images/H/honda-silver-logo-E810C6A8A4-seeklogo.com.png",
+          "modal": "City",
+          "owner": "1st Owner",
+          "budget": "8L",
+          "Fuel": "Petrol",
+          "transmission": "Automatic",
+          "bodyType": "Sedan",
+          "location": "Hyderabad",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "logo": "https://seeklogo.com/images/T/Tata-logo-5C14C25DDE-seeklogo.com.png",
+      "brand": "Tata",
+      "detailedView": [
+        {
+          "id": "5",
+          "image": "https://seeklogo.com/images/T/Tata-logo-5C14C25DDE-seeklogo.com.png",
+          "modal": "Tiago",
+          "owner": "2nd Owner",
+          "budget": "5L",
+          "Fuel": "Petrol",
+          "transmission": "Manual",
+          "bodyType": "Hatchpack",
+          "location": "Chennai",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "logo": "https://seeklogo.com/images/F/Ford-logo-836834C6CC-seeklogo.com.png",
+      "brand": "Ford",
+      "detailedView": [
+        {
+          "id": "6",
+          "image": "https://seeklogo.com/images/F/Ford-logo-836834C6CC-seeklogo.com.png",
+          "modal": "Figo",
+          "owner": "3rd Owner",
+          "budget": "2L",
+          "Fuel": "Diesel",
+          "transmission": "Automatic",
+          "bodyType": "Hatchpack",
+          "location": "Bangalore",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "logo": "https://seeklogo.com/images/V/Volkswagen-logo-213294A3AC-seeklogo.com.png",
+      "brand": "Volkswagen",
+      "detailedView": [
+        {
+          "id": "7",
+          "image": "https://seeklogo.com/images/V/Volkswagen-logo-213294A3AC-seeklogo.com.png",
+          "modal": "Polo",
+          "owner": "1st Owner",
+          "budget": "6L",
+          "Fuel": "Petrol",
+          "transmission": "Manual",
+          "bodyType": "Hatchpack",
+          "location": "Hyderabad",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "logo": "https://seeklogo.com/images/M/mahindra-logo-B74777040E-seeklogo.com.png",
+      "brand": "Mahindra",
+      "detailedView": [
+        {
+          "id": "8",
+          "image": "https://seeklogo.com/images/M/mahindra-logo-B74777040E-seeklogo.com.png",
+          "modal": "Thar",
+          "owner": "2nd Owner",
+          "budget": "8L",
+          "Fuel": "Petrol",
+          "transmission": "Automatic",
+          "bodyType": "SUV",
+          "location": "Bangalore",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "logo": "https://seeklogo.com/images/T/toyota-logo-08A29AEE08-seeklogo.com.png",
+      "brand": "Toyota",
+      "detailedView": [
+        {
+          "id": "9",
+          "image": "https://seeklogo.com/images/T/toyota-logo-08A29AEE08-seeklogo.com.png",
+          "modal": "Innova",
+          "owner": "3rd Owner",
+          "budget": "10L",
+          "Fuel": "Petrol",
+          "transmission": "Manual",
+          "bodyType": "SUV",
+          "location": "Chennai",
+          "kms": "1000"
+        }
+      ]
+    },
+    {
+      "id": "9369095506",
+      "logo": "",
+      "brand": "BYD",
+      "detailedView": [
+        {
+          "modal": "BYD",
+          "owner": "1",
+          "location": "hyderabad",
+          "bodyType": "akjf",
+          "transmission": "affkja",
+          "Fuel": "ajkfaj",
+          "budget": "jfksj",
+          "kms": "dkfjlk",
+          "image": "",
+          "id": "4853785413",
+          "brand": "BYD"
+        }
+      ]
+    },
+    {
+      "id": "3582970387",
+      "logo": "",
+      "brand": "BYD",
+      "detailedView": [
+        {
+          "modal": "beyoua",
+          "owner": "kjkj",
+          "location": "kjkj",
+          "bodyType": "kj",
+          "transmission": "kj",
+          "Fuel": "kjkj",
+          "budget": "kjk",
+          "kms": "kjkj",
+          "image": "",
+          "id": "3028516257",
+          "brand": "BYD"
+        }
+      ]
+    }
+  ]
+}

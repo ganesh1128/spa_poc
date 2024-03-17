@@ -15,10 +15,10 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = [
-  { name: 'Products', path: '/products' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Test', path: '/test' },
+  { name: 'Home', path: '/home' },
+  { name: 'Services', path: '/services' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Contac Us', path: '/contactus' },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

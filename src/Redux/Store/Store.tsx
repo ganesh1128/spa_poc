@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'reduxjs-toolkit-persist'
 import storage from 'reduxjs-toolkit-persist/lib/storage'
 import counterSlice from '../Reducers/counterSlice';
+import dataSlice from '../Reducers/dataSlice';
 
 
 
 const rootReducer = combineReducers({
-    counter: counterSlice
+    counter: counterSlice,
+    data: dataSlice
 })
 
 const persistConfig = {
