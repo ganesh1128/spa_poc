@@ -35,12 +35,9 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 const CustomizedDialogs: FunctionComponent<CustomizedDialogProps> = ({ open, handleClose, cardData }) => {
-  const [image, setImage] = useState<File | null>(null);
   const [selectedImage, setSelectedImage] = useState<any>(null);
-  const [data, setData] = useState<Brand[]>([])
   const dispatch = useDispatch();
   const brandData = useSelector((state:any) => state.data.brands)
-  console.log('brand data', brandData)
   let randomId = Math.floor(1000000000 + Math.random() * 9000000000).toString();
   let generateId = Math.floor(1000000000 + Math.random() * 9999999999).toString();
   const [formData, setFormData] = useState<Brand>({
@@ -72,7 +69,6 @@ const CustomizedDialogs: FunctionComponent<CustomizedDialogProps> = ({ open, han
       [name]: value
     }));
   };
-     
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     
     const pic = e.target.files?.[0];
@@ -92,14 +88,12 @@ const CustomizedDialogs: FunctionComponent<CustomizedDialogProps> = ({ open, han
           })
     }
   };
-
   useEffect(() => {
     const storedData = localStorage.getItem('brands');
     if (storedData) {
       dispatch(setBrands(JSON.parse(storedData)));
     }
   }, [dispatch]);
-
   useEffect(() => {
     localStorage.setItem('brands', JSON.stringify(brandData));
   }, [brandData]);

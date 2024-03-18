@@ -1,20 +1,21 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import "./styles.css";
 import { Box, Card, CardActionArea, CardContent, Grid, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AreaCard from "../../Comonents/Card";
-import Maruthi from '../../Images/maruthi-logo.png'
-import LogoData from '../../Utility/Logos.json'
-import { Brand, CardData } from "../../Types/CardData";
+import { Brand } from "../../Types/CardData";
 import CustomizedDialogs from "../../Comonents/Modal";
 import { useNavigate } from "react-router-dom";
 import { useBrandContext } from '../../Utility/Context/DataContext'
+import { setBrands } from "../../Redux/Reducers/dataSlice";
+import LogoData from '../../Utility/Logos.json'
 
 const Logos: FunctionComponent = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState<Brand | null>(null);
   const brandData = useSelector((state:any) => state.data.brands);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { setSelectedBrand } = useBrandContext();
   const handleCardClick = (cardData: Brand) => {
     setSelectedCard(cardData);
@@ -22,6 +23,18 @@ const Logos: FunctionComponent = () => {
     setSelectedBrand(selectedBrand);
     navigate(`/details/${cardData.id}`, { state: { selectedBrand: selectedBrand } });
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+       dispatch(setBrands(LogoData.Logos))
+      } catch (error) {
+        console.error('Error fetching image data:', error);
+      }
+    };
+    fetchData();
+  },[])
+
 
   const handleCloseModal = () => {
     setOpenModal(false); 
