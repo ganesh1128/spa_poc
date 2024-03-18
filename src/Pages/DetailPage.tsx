@@ -16,7 +16,7 @@ const DetailsPage: FunctionComponent = () => {
     const [data, setData] = useState(selectedBrand)
     const [selectedModels, setSelectedModels] = useState<string[]>([]);
     const [selectedOwners, setSelectedOwners] = useState<string[]>([]);
-    const [filteredData, setFilteredData] = useState<any>([]);
+    const [filteredData, setFilteredData] = useState<any>(data?.detailedView);
     const [selectedBudget, setSelectedBudget] = useState<string>('');
     const navigate = useNavigate();
     const BodyTypes = [
@@ -41,7 +41,11 @@ const DetailsPage: FunctionComponent = () => {
           setSelectedOwners([...selectedOwners, value]);
       }
   };
-
+useEffect(() => {
+    console.log(!filteredData)
+    console.log('45')
+   if(!filteredData)  navigate('/')
+})
   const applyFilters = () => {
     if(filteredData == 'undefined' || filteredData == undefined) navigate('/')
      let filteredResults = data?.detailedView?.filter((item: DetailedView) => {
