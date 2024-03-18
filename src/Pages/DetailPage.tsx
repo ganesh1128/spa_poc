@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { FunctionComponent, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Typography, FormControl, InputLabel, Select, MenuItem, TextField, Checkbox, FormControlLabel, RadioGroup, Radio, Button, FormGroup, Stack, Autocomplete, Card, CardMedia, CardContent } from "@mui/material";
 import { Brand, DetailedView } from "../Types/CardData";
 import { useBrandContext } from "../Utility/Context/DataContext";
@@ -18,6 +18,7 @@ const DetailsPage: FunctionComponent = () => {
     const [selectedOwners, setSelectedOwners] = useState<string[]>([]);
     const [filteredData, setFilteredData] = useState<any>([]);
     const [selectedBudget, setSelectedBudget] = useState<string>('');
+    const navigate = useNavigate();
     const BodyTypes = [
       { title: 'sedan', },
       { title: 'suv'},
@@ -42,6 +43,7 @@ const DetailsPage: FunctionComponent = () => {
   };
 
   const applyFilters = () => {
+    if(filteredData == 'undefined' || filteredData == undefined) navigate('/')
      let filteredResults = data?.detailedView?.filter((item: DetailedView) => {
         let allConditionsMet = true;
         if (city !== '' && item.location.toLowerCase() !== city.toLowerCase()) {
@@ -79,20 +81,21 @@ const DetailsPage: FunctionComponent = () => {
     setFilteredData(filteredResults);
     setFilteredData((filteredResults:any) => {
         return filteredResults;
-    });
+    });  
 };
-    const resetFilters = () => {
-      setCity('');
-      setBodyType('');
-      setOwners('');
-      setFuelType('');
-      setTransmission('');
-      setData(selectedCardData);
-      setSelectedModels([]);
-      setSelectedOwners([]);
-      setSelectedBudget('');
-      setFilteredData([]);
-    };
+
+const resetFilters = () => {
+    setCity('');
+    setBodyType('');
+    setOwners('');
+    setFuelType('');
+    setTransmission('');
+    setData(selectedCardData);
+    setSelectedModels([]);
+    setSelectedOwners([]);
+    setSelectedBudget('');
+    setFilteredData([]);
+};
     return (
         <Box sx={{ display: 'flex', flexGrow: 1 }}>
             <Box sx={{ flex: '1', p: 2, ml: 5 }}>
@@ -272,7 +275,7 @@ const DetailsPage: FunctionComponent = () => {
               })}
              <Box pt={5}>
               {
-                filteredData.length == 0 &&  <Typography sx={{color: 'red'}}>No Results found</Typography>
+                filteredData?.length == 0 &&  <Typography sx={{color: 'red'}}>No Results found</Typography>
               
               }
              </Box>
