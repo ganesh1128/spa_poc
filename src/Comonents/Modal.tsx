@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import { CardData, Brand, FormData, DetailedView } from '../Types/CardData';
+import { CardData, Brand, DetailedView } from '../Types/CardData';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { setAllFormData, setBrands } from '../Redux/Reducers/dataSlice';
@@ -74,35 +74,45 @@ const CustomizedDialogs: FunctionComponent<CustomizedDialogProps> = ({ open, han
   };
      
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setImage(file);
+    
+    const pic = e.target.files?.[0];
+
+    if(pic!==undefined){
+      const data = new FormData();
+        data.append("file", pic);
+        data.append("upload_preset", "ganeshdemo");
+        data.append("cloud_name", "dzdfvp7wh")
+        axios.post("https://api.cloudinary.com/v1_1/dzdfvp7wh/image/upload", data)
+          .then(data => {
+            setSelectedImage(data?.data?.url.toString());
+            console.log(data)
+          })  
+          .catch((err)=>{
+            console.log(err)
+          })
     }
   };
 
-  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-
-  };
+  useEffect(() => {
+    const storedData = localStorage.getItem('brands');
+    if (storedData) {
+      dispatch(setBrands(JSON.parse(storedData)));
+    }
+  }, [dispatch]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-       dispatch(setBrands(LogoData.Logos))
-      } catch (error) {
-        console.error('Error fetching image data:', error);
-      }
-    };
-    fetchData();
-  },[])
+    localStorage.setItem('brands', JSON.stringify(brandData));
+  }, [brandData]);
 
   const handleSubmit = async () => {
     const existingBrand = brandData.find((brand:Brand) => brand.brand.toLowerCase() === formData.brand.toLowerCase());
     const formattedData = {
       id: formData.id,
-      logo: formData.logo,
+      logo: selectedImage || '',
       brand: formData.brand,
       detailedView: formData?.detailedView?.map(detail => ({
         ...detail,
+        image: selectedImage || ''
       }))
     };
     try {
@@ -244,7 +254,7 @@ const CustomizedDialogs: FunctionComponent<CustomizedDialogProps> = ({ open, han
               value={formData.detailedView?.[0]?.kms}
               onChange={(e: any) => handleInputChange(e, 'kms')}
               />
-              <input type="file" onChange={handleImageChange} />
+              <input type="file" onChange={handleFileChange} accept='image/*' />
             </div>
             {selectedImage && <img src={selectedImage} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '200px' }} />}
         </div>

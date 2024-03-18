@@ -2,16 +2,18 @@ import React, { FunctionComponent, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Typography, FormControl, InputLabel, Select, MenuItem, TextField, Checkbox, FormControlLabel, RadioGroup, Radio, Button, FormGroup, Stack, Autocomplete, Card, CardMedia, CardContent } from "@mui/material";
 import { Brand, DetailedView } from "../Types/CardData";
+import { useBrandContext } from "../Utility/Context/DataContext";
 
 const DetailsPage: FunctionComponent = () => {
     const location = useLocation();
     const selectedCardData: Brand | null = location.state?.selectedBrand;
+    const { selectedBrand } = useBrandContext(); 
     const [city, setCity] = useState('');
     const [bodyType, setBodyType] = useState('');
     const [owners, setOwners] = useState('');
     const [fuelType, setFuelType] = useState('');
     const [transmission, setTransmission] = useState('');
-    const [data, setData] = useState(selectedCardData)
+    const [data, setData] = useState(selectedBrand)
     const [selectedModels, setSelectedModels] = useState<string[]>([]);
     const [selectedOwners, setSelectedOwners] = useState<string[]>([]);
     const [filteredData, setFilteredData] = useState<any>([]);
@@ -142,7 +144,7 @@ const DetailsPage: FunctionComponent = () => {
                     <FormControl component="fieldset">
                         <Typography variant="h6">Brands</Typography>
                         <FormGroup>
-                        {data?.detailedView?.map((item, index) => (
+                        {data?.detailedView?.map((item:DetailedView, index:number) => (
                             <FormControlLabel
                                 key={index}
                                 control={<Checkbox checked={selectedModels.includes(item.modal)} onChange={handleModelChange} value={item.modal} />}
@@ -239,16 +241,19 @@ const DetailsPage: FunctionComponent = () => {
             </Box>
             <Box sx={{ flex: '1', p: 2, position: 'sticky', top: 0, maxHeight: 'calc(100vh - 50px)', overflowY: 'auto' }}>
             <Box height={50} />
-              <Typography>{data?.brand}</Typography>
+              <Typography variant="h4" ml={2} mt={2}>{data?.brand}</Typography>
               {
               filteredData?.map((el:DetailedView,index:any) => {
                 return(
                     <Box key={index} p={2}>
                         <Card sx={{ maxWidth: 345 }}>
                           <CardMedia
-                            sx={{ height: 140 }}
+                            component="img"
+                            sx={{ height: 140, display: 'flex', justifyContent: 'center' }}
                             image= {el.image}
                             title={el.modal}
+                            alt={el.modal}
+                            style={{ display: 'inline-block', objectFit: 'cover', width: 'auto', marginTop: '15px', marginLeft: '15px' }}
                           />
                           <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
@@ -263,7 +268,7 @@ const DetailsPage: FunctionComponent = () => {
                           </CardContent>
                         </Card>
                     </Box>
-                      )
+                )
               })}
              <Box pt={5}>
               {

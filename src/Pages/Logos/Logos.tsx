@@ -8,23 +8,24 @@ import LogoData from '../../Utility/Logos.json'
 import { Brand, CardData } from "../../Types/CardData";
 import CustomizedDialogs from "../../Comonents/Modal";
 import { useNavigate } from "react-router-dom";
-
+import { useBrandContext } from '../../Utility/Context/DataContext'
 
 const Logos: FunctionComponent = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState<Brand | null>(null);
   const brandData = useSelector((state:any) => state.data.brands);
   const navigate = useNavigate();
+  const { setSelectedBrand } = useBrandContext();
   const handleCardClick = (cardData: Brand) => {
-    setSelectedCard(cardData); // Set the selected card data
+    setSelectedCard(cardData);
     const selectedBrand = [cardData].find((el: any) => el.id === cardData.id);
-    console.log('===21', selectedBrand)
+    setSelectedBrand(selectedBrand);
     navigate(`/details/${cardData.id}`, { state: { selectedBrand: selectedBrand } });
   };
 
   const handleCloseModal = () => {
-    setOpenModal(false); // Close the modal
-    setSelectedCard(null); // Clear the selected card data
+    setOpenModal(false); 
+    setSelectedCard(null); 
   };
     return (
       <Box component="main" 

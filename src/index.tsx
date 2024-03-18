@@ -7,6 +7,7 @@ import { persistor, store } from './Redux/Store/Store';
 import { Provider } from 'react-redux';
 // @ts-ignore
 import { PersistGate } from 'redux-persist/integration/react';
+import { BrandProvider } from './Utility/Context/DataContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
-    <App />
+    <BrandProvider>
+      <App />
+    </BrandProvider>
     </PersistGate>
     </Provider>
   </React.StrictMode>
