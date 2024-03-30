@@ -6,6 +6,7 @@ import ResponsiveAppBar from './Comonents/TopNavBar';
 import Logos from './Pages/Logos/Logos';
 import { Box } from '@mui/material';
 import DetailsPage from './Pages/DetailPage';
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Logos />} />
       <Route path="/details/:id" element={<DetailsPage/>} />
+      <Route path="/home" element={<Home/>} />
     </Routes>
     </Box>
   </BrowserRouter>

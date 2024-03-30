@@ -27,6 +27,48 @@
 .App-link {
   color: #61dafb;
 }
+/* App.css */
+.custom-file-uploader .hvETDY {
+  border: 2px dashed #666 !important; /* Grey border */
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.hvETDY {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 322px;
+  max-width: 508px;
+  height: 48px;
+  border: dashed 2px #818283 !important;
+  padding: 8px 16px 8px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-grow: 0;
+}
+
+.dropzone {
+  text-align: center;
+  padding: 30px;
+  border: 3px dashed #eeeeee;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.selected-file-wrapper {
+  text-align: center;
+}
+
+.selected-file {
+  color: #000;
+  font-weight: bold;
+}
+
+
 
 @keyframes App-logo-spin {
   from {
